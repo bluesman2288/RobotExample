@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180823 08:33:57.102" generator="Robot 3.0.4 (Python 2.7.15 on darwin)">
+<suite source="/Users/ekwong/git/wip/RobotExample/usecase1.robot" id="s1" name="Usecase1">
+<test id="s1-t1" name="Example">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://bbcnews.com</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180823 08:33:57.318" level="INFO">Opening browser 'chrome' to base url 'http://bbcnews.com'.</msg>
+<status status="PASS" endtime="20180823 08:34:02.699" starttime="20180823 08:33:57.318"></status>
+</kw>
+<status status="PASS" endtime="20180823 08:34:02.700" critical="yes" starttime="20180823 08:33:57.317"></status>
+</test>
+<kw type="teardown" name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20180823 08:34:02.779" starttime="20180823 08:34:02.707"></status>
+</kw>
+<status status="PASS" endtime="20180823 08:34:02.779" starttime="20180823 08:33:57.105"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Usecase1" pass="1">Usecase1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
