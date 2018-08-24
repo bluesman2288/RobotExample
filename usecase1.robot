@@ -22,7 +22,7 @@ important being the possibility to select what tests to execute.
 | | Open browser | http://sonycrackle.com | ${BROWSER}
 | Wait until page is loaded
 | | Set Selenium Implicit Wait | 5 seconds
-| Start Count 
+| Start Count in Custom Library
 | | ${currentCount}= | Start Count
 | | Log to console | ${currentCount}
 | Click TV Link
@@ -31,17 +31,17 @@ important being the possibility to select what tests to execute.
 | | Go Back
 | Click MOVIES Link
 | | Click Element | //a[contains(text(),'Movies')]
-| Clear Count
+| Clear Count in Custom Library
 | | ${currentCount}= | Clear Count
 | | Log to console | ${currentCount}
-| Restart Count
+| Restart Count in Custom Library
 | | ${currentCount}= | Start Count
 | | Log to console | ${currentCount}
 | Go Back From Movies Link
 | | Go Back
 | Click Register
 | | Click Element | //a[contains(text(),'Register')]
-| Increment Count
+| Increment Count in Custom Library
 | | ${currentCount}= | Start Count
 | | Log to console | ${currentCount}
 | Custom Keyword
