@@ -1,33 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180823 08:33:57.102" generator="Robot 3.0.4 (Python 2.7.15 on darwin)">
+<robot generated="20180824 12:32:32.093" generator="Robot 3.0.4 (Python 2.7.15 on darwin)">
 <suite source="/Users/ekwong/git/wip/RobotExample/usecase1.robot" id="s1" name="Usecase1">
-<test id="s1-t1" name="Example">
+<test id="s1-t1" name="Go to Website">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
-<arg>http://bbcnews.com</arg>
+<arg>http://sonycrackle.com</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180823 08:33:57.318" level="INFO">Opening browser 'chrome' to base url 'http://bbcnews.com'.</msg>
-<status status="PASS" endtime="20180823 08:34:02.699" starttime="20180823 08:33:57.318"></status>
+<msg timestamp="20180824 12:32:32.232" level="INFO">Opening browser 'chrome' to base url 'http://sonycrackle.com'.</msg>
+<status status="PASS" endtime="20180824 12:32:35.489" starttime="20180824 12:32:32.232"></status>
 </kw>
-<status status="PASS" endtime="20180823 08:34:02.700" critical="yes" starttime="20180823 08:33:57.317"></status>
+<status status="PASS" endtime="20180824 12:32:35.490" critical="yes" starttime="20180824 12:32:32.231"></status>
 </test>
-<kw type="teardown" name="Close All Browsers" library="Selenium2Library">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" endtime="20180823 08:34:02.779" starttime="20180823 08:34:02.707"></status>
+<test id="s1-t2" name="Wait until page is loaded">
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20180824 12:32:35.495" starttime="20180824 12:32:35.493"></status>
 </kw>
-<status status="PASS" endtime="20180823 08:34:02.779" starttime="20180823 08:33:57.105"></status>
+<status status="PASS" endtime="20180824 12:32:35.495" critical="yes" starttime="20180824 12:32:35.492"></status>
+</test>
+<test id="s1-t3" name="Start Count">
+<kw name="Start Count" library="SampleLibrary">
+<assign>
+<var>${currentCount}</var>
+</assign>
+<msg timestamp="20180824 12:32:35.497" level="INFO">${currentCount} = 1</msg>
+<status status="PASS" endtime="20180824 12:32:35.497" starttime="20180824 12:32:35.497"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${currentCount}</arg>
+</arguments>
+<status status="PASS" endtime="20180824 12:32:35.498" starttime="20180824 12:32:35.497"></status>
+</kw>
+<status status="PASS" endtime="20180824 12:32:35.498" critical="yes" starttime="20180824 12:32:35.496"></status>
+</test>
+<test id="s1-t4" name="Click TV Link">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//a[contains(text(),'TV')]</arg>
+</arguments>
+<msg timestamp="20180824 12:32:35.499" level="INFO">Clicking element '//a[contains(text(),'TV')]'.</msg>
+<status status="PASS" endtime="20180824 12:32:37.285" starttime="20180824 12:32:35.499"></status>
+</kw>
+<status status="PASS" endtime="20180824 12:32:37.285" critical="yes" starttime="20180824 12:32:35.498"></status>
+</test>
+<test id="s1-t5" name="Go Back From TV Link">
+<kw name="Go Back" library="Selenium2Library">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" endtime="20180824 12:32:37.976" starttime="20180824 12:32:37.287"></status>
+</kw>
+<status status="PASS" endtime="20180824 12:32:37.977" critical="yes" starttime="20180824 12:32:37.286"></status>
+</test>
+<test id="s1-t6" name="Click MOVIES Link">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//a[contains(text(),'Movies')]</arg>
+</arguments>
+<msg timestamp="20180824 12:32:37.979" level="INFO">Clicking element '//a[contains(text(),'Movies')]'.</msg>
+<status status="PASS" endtime="20180824 12:32:38.389" starttime="20180824 12:32:37.979"></status>
+</kw>
+<status status="PASS" endtime="20180824 12:32:38.389" critical="yes" starttime="20180824 12:32:37.978"></status>
+</test>
+<test id="s1-t7" name="Clear Count">
+<kw name="Clear Count" library="SampleLibrary">
+<assign>
+<var>${currentCount}</var>
+</assign>
+<msg timestamp="20180824 12:32:38.392" level="INFO">${currentCount} = 0</msg>
+<status status="PASS" endtime="20180824 12:32:38.392" starttime="20180824 12:32:38.391"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${currentCount}</arg>
+</arguments>
+<status status="PASS" endtime="20180824 12:32:38.393" starttime="20180824 12:32:38.393"></status>
+</kw>
+<status status="PASS" endtime="20180824 12:32:38.394" critical="yes" starttime="20180824 12:32:38.390"></status>
+</test>
+<test id="s1-t8" name="Restart Count">
+<kw name="Start Count" library="SampleLibrary">
+<assign>
+<var>${currentCount}</var>
+</assign>
+<msg timestamp="20180824 12:32:38.396" level="INFO">${currentCount} = 1</msg>
+<status status="PASS" endtime="20180824 12:32:38.396" starttime="20180824 12:32:38.395"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${currentCount}</arg>
+</arguments>
+<status status="PASS" endtime="20180824 12:32:38.398" starttime="20180824 12:32:38.397"></status>
+</kw>
+<status status="PASS" endtime="20180824 12:32:38.398" critical="yes" starttime="20180824 12:32:38.394"></status>
+</test>
+<test id="s1-t9" name="Go Back From Movies Link">
+<kw name="Go Back" library="Selenium2Library">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" endtime="20180824 12:32:38.886" starttime="20180824 12:32:38.400"></status>
+</kw>
+<status status="PASS" endtime="20180824 12:32:38.886" critical="yes" starttime="20180824 12:32:38.399"></status>
+</test>
+<test id="s1-t10" name="Click Register">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//a[contains(text(),'Register')]</arg>
+</arguments>
+<msg timestamp="20180824 12:32:38.889" level="INFO">Clicking element '//a[contains(text(),'Register')]'.</msg>
+<status status="PASS" endtime="20180824 12:32:39.143" starttime="20180824 12:32:38.888"></status>
+</kw>
+<status status="PASS" endtime="20180824 12:32:39.144" critical="yes" starttime="20180824 12:32:38.887"></status>
+</test>
+<test id="s1-t11" name="Increment Count">
+<kw name="Start Count" library="SampleLibrary">
+<assign>
+<var>${currentCount}</var>
+</assign>
+<msg timestamp="20180824 12:32:39.147" level="INFO">${currentCount} = 2</msg>
+<status status="PASS" endtime="20180824 12:32:39.147" starttime="20180824 12:32:39.146"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${currentCount}</arg>
+</arguments>
+<status status="PASS" endtime="20180824 12:32:39.148" starttime="20180824 12:32:39.148"></status>
+</kw>
+<status status="PASS" endtime="20180824 12:32:39.149" critical="yes" starttime="20180824 12:32:39.145"></status>
+</test>
+<test id="s1-t12" name="Custom Keyword">
+<kw name="auticon keyword">
+<arguments>
+<arg>mindsparktest</arg>
+</arguments>
+<assign>
+<var>${results}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>the string is "${input}"</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20180824 12:32:39.151" level="INFO">${string} = the string is "mindsparktest"</msg>
+<status status="PASS" endtime="20180824 12:32:39.151" starttime="20180824 12:32:39.151"></status>
+</kw>
+<msg timestamp="20180824 12:32:39.152" level="INFO">${results} = the string is "mindsparktest"</msg>
+<status status="PASS" endtime="20180824 12:32:39.152" starttime="20180824 12:32:39.150"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${results}</arg>
+</arguments>
+<status status="PASS" endtime="20180824 12:32:39.153" starttime="20180824 12:32:39.152"></status>
+</kw>
+<status status="PASS" endtime="20180824 12:32:39.153" critical="yes" starttime="20180824 12:32:39.149"></status>
+</test>
+<status status="PASS" endtime="20180824 12:32:39.155" starttime="20180824 12:32:32.097"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="0" pass="12">Critical Tests</stat>
+<stat fail="0" pass="12">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Usecase1" pass="1">Usecase1</stat>
+<stat fail="0" id="s1" name="Usecase1" pass="12">Usecase1</stat>
 </suite>
 </statistics>
 <errors>
